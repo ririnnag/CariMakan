@@ -6,7 +6,11 @@ const mealRoutes = require('./routes/mealRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: 'https://carimakan-production.up.railway.app' }));
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || '*',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes

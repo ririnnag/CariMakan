@@ -5,7 +5,7 @@ const API_BASE_URL = 'https://www.themealdb.com/api/json/v1/1';
 exports.searchMeals = async (req, res) => {
   try {
     const { search } = req.query;
-    const query = search ? search : '';
+    const query = search || '';
     
     // Jika ada kata kunci pencarian, lakukan pencarian normal
     const response = await axios.get(`${API_BASE_URL}/search.php?s=${query}`);

@@ -1,1 +1,1 @@
-export const API_URL = 'https://carimakan-production.up.railway.app/api/meals';
+export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/meals';
